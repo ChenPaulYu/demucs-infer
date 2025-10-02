@@ -58,11 +58,11 @@ dev = [
 demucs-infer = "demucs_infer.separate:main"
 
 [project.urls]
-Homepage = "https://github.com/worzpro/demucs-infer"
-Repository = "https://github.com/worzpro/demucs-infer"
+Homepage = "https://github.com/ChenPaulYu/demucs-infer"
+Repository = "https://github.com/ChenPaulYu/demucs-infer"
 "Original Demucs" = "https://github.com/facebookresearch/demucs"
-"Bug Reports" = "https://github.com/worzpro/demucs-infer/issues"
-Changelog = "https://github.com/worzpro/demucs-infer/blob/master/CHANGELOG.md"
+"Bug Reports" = "https://github.com/ChenPaulYu/demucs-infer/issues"
+Changelog = "https://github.com/ChenPaulYu/demucs-infer/blob/main/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
 where = ["."]
