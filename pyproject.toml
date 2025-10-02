@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "demucs-infer"
+version = "4.1.0"
+description = "Music source separation in the waveform domain - Inference-only (PyTorch 2.x)"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Alexandre Défossez", email = "defossez@fb.com"},
+]
+maintainers = [
+    {name = "worzpro Development Team"},
+]
+keywords = ["audio", "music", "source-separation", "demucs", "inference"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Minimal inference-only dependencies
+dependencies = [
+    "torch>=2.0.0",
+    "torchaudio>=2.0.0",
+    "einops",
+    "julius>=0.2.3",
+    "openunmix",
+    "pyyaml",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+# Optional: MP3 encoding support
+mp3 = [
+    "lameenc>=1.2",
+]
+# Optional: Quantized model support
+quantized = [
+    "diffq>=0.2.1",
+]
+# Development dependencies
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+demucs-infer = "demucs_infer.separate:main"
+
+[project.urls]
+Homepage = "https://github.com/worzpro/demucs-infer"
+Repository = "https://github.com/worzpro/demucs-infer"
+"Original Demucs" = "https://github.com/facebookresearch/demucs"
+"Bug Reports" = "https://github.com/worzpro/demucs-infer/issues"
+Changelog = "https://github.com/worzpro/demucs-infer/blob/master/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["demucs_infer*"]
