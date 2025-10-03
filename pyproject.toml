@@ -67,3 +67,6 @@ Changelog = "https://github.com/ChenPaulYu/demucs-infer/blob/main/CHANGELOG.md"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["demucs_infer*"]
+
+[tool.setuptools.package-data]
+demucs_infer = ["remote/*.txt", "remote/*.yaml"]
